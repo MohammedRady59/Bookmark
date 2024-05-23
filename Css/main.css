@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --head-color: #f7ecde;
+}
+body {
+  font-family: "Righteous", sans-serif;
+}
+.header {
+  background-color: var(--head-color);
+  height: 100vh;
+}
+.mainHead h2 {
+  color: #352e28;
+  position: relative;
+  z-index: 2;
+  font-family: "Pacifico", cursive;
+}
+.mainHead h2::after {
+  content: "";
+  position: absolute;
+  background-color: #fec260;
+  width: 20%;
+  height: 30%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: height 0.5s;
+}
+.mainHead h2:hover::after {
+  height: 80%;
+}
+.mainContnt {
+  border: dotted black;
+  border-width: 2px 0;
+}
+.mainContnt .bookmark p {
+  background: linear-gradient(to left, #3ca55c, #b5ac49);
+  -webkit-background-clip: text;
+  font-size: 25px;
+  -webkit-text-fill-color: transparent;
+}
+.submit button {
+  background-color: #d1512d;
+  color: white;
+}
+.submit button:hover {
+  background-color: #963b22;
+  color: white;
+}
+table {
+  font-family: system-ui, "Segoe UI", Roboto;
+}
+.overlayHidden {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.253) 0% 100%);
+  font-family: system-ui, "Segoe UI", Roboto;
+}
+.overlayHidden .circles div {
+  width: 20px;
+  height: 20px;
+}
+.hide {
+  display: none;
+}
+#xmark {
+  cursor: pointer;
+}

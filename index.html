@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/all.min.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Css/main.css" />
+    <script defer src="Js/bootstrap.bundle.min.js"></script>
+    <script defer src="Js/index.js"></script>
+  </head>
+  <body>
+    <section class="header py-5">
+      <div class="container">
+        <div class="text-center mainHead">
+          <h2 class="h1 position-relative">Bookmarker</h2>
+        </div>
+        <div class="mainContnt my-5 px-3">
+          <div class="text-center bookmark">
+            <p class="py-3">
+              <i class="fa-solid fa-bookmark"></i>
+              Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i>
+            </p>
+          </div>
+          <div>
+            <div class="row g-4">
+              <div class="col-12">
+                <div>
+                  <p>
+                    <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name
+                  </p>
+                  <input
+                    type="text"
+                    class="form-control rounded-2"
+                    placeholder="Bookmark Name"
+                    id="siteName"
+                    oninput="validation(this)"
+                  />
+                </div>
+              </div>
+              <div class="col-12">
+                <div>
+                  <p><i class="fa-solid fa-link pe-2"></i> Site URL</p>
+                  <input
+                    type="text"
+                    class="form-control rounded-2"
+                    placeholder="Website URL"
+                    id="siteURL"
+                    oninput="validation(this)"
+                  />
+                </div>
+                <div class="text-center py-4 submit">
+                  <button
+                    type="submit"
+                    class="btn px-5 fs-5"
+                    id="sumbit"
+                    onclick="displayBookmark()"
+                  >
+                    Sumbit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tableData">
+          <table class="table bg-light text-center">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="rowdata">
+              <!--   <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>
+                  <button class="btn btn-success">
+                    <i class="fa-solid fa-eye pe-2"></i>
+                    <a
+                      href="https://routeacademy.github.io/Bookmarker/"
+                      target="_blank"
+                      class="text-light text-decoration-none"
+                      >Visit</a
+                    >
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger">
+                    <i class="fa-solid fa-trash-can"></i>
+                    Delete
+                  </button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="hide" id="hide">
+      <div
+        class="position-fixed overlayHidden d-flex justify-content-center align-items-center hide"
+      >
+        <div class="bg-light p-4 rounded-3">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex circles">
+              <div class="rounded-circle bg-danger me-2"></div>
+              <div class="rounded-circle bg-success me-2"></div>
+              <div class="rounded-circle bg-warning me-2"></div>
+            </div>
+            <div><i class="fa-solid fa-xmark close fs-3" id="xmark"></i></div>
+          </div>
+          <p class="fs-4 py-3 fw-bold">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+          <div class="px-1">
+            <p class="fs-5">
+              <i class="fa-regular fa-circle-right p-2 text-danger"></i>Site
+              name must contain at least 3 characters
+            </p>
+            <p class="fs-5">
+              <i class="fa-regular fa-circle-right p-2 text-danger"></i> Site
+              URL must be a valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
